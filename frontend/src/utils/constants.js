@@ -1,5 +1,5 @@
 const apiOptions = {
-  url: 'http://localhost:3000',
+  url: 'https://api.mixer0000.nomoredomainsmonster.ru',
   headers: {
     "Content-Type": "application/json",
   },

@@ -13,7 +13,7 @@ const { PORT = '3000', MONGO_URL = 'mongodb://localhost:27017/mestodb' } = proce
 const app = express();
 
 app.use(cors({
-  origin: ['http://localhost:3001'],
+  origin: ['http://localhost:3001', 'https://mixer0000.nomoredomainsmonster.ru'],
   credentials: true,
   maxAge: 60,
 }));
