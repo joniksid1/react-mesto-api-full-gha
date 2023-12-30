@@ -92,8 +92,8 @@ module.exports.updateUserData = async (req, res, next) => {
 module.exports.updateUserAvatar = async (req, res, next) => {
   try {
     const { avatar } = req.body;
-    await updateUser(req.user._id, { avatar });
-    res.status(HTTP_STATUS_OK).send({ message: 'Аватар успешно обновлён' });
+    const updatedUser = await updateUser(req.user._id, { avatar });
+    res.status(HTTP_STATUS_OK).send(updatedUser);
   } catch (e) {
     if (e instanceof mongoose.Error.ValidationError) {
       next(new CastError({ message: e.message }));
