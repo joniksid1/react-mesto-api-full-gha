@@ -89,6 +89,7 @@ function App() {
     return authApi.register(password, email).then((res) => {
       setIsSucsessed(true);
       setIsToolTipOpen(true);
+      navigate('/sign-in');
       return res;
     }).catch((error) => {
       setIsSucsessed(false);

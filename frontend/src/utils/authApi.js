@@ -1,4 +1,5 @@
 export const BASE_URL = 'https://api.mixer0000.nomoredomainsmonster.ru';
+// export const BASE_URL = 'http://localhost:3000'; - поменять на него для локального запуска с бэкэндом на 3000 порте
 
 const getRequest = (url, options) => {
   return fetch(url, options)

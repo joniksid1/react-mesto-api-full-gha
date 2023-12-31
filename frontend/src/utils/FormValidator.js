@@ -47,18 +47,19 @@ class FormValidator {
     this._form.addEventListener('submit', (evt) => {
       this.setButtonState(false);
       this._preventDefault(evt);
+    });
+
+    this._inputList.forEach((input) => {
+      input.addEventListener('input', () => {
+        this._checkInputValidity(input);
+        if (this._form.checkValidity()) {
+          this.setButtonState(true);
+        } else {
+          this.setButtonState(false);
+        }
       });
-      this._inputList.forEach((input) => {
-        input.addEventListener('input', () => {
-          this._checkInputValidity(input);
-          if (this._form.checkValidity()) {
-            this.setButtonState(true);
-          } else {
-            this.setButtonState(false);
-          }
-        });
-      });
-  };
+    });
+  }
 
   resetValidation() {
     this.setButtonState(false);
